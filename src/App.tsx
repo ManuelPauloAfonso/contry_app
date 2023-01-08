@@ -1,3 +1,4 @@
+import { ContryProvider } from "./context"
 import Routes from "./routes/routes"
 import { GlobalStyle } from "./styles/global"
 
@@ -5,8 +6,10 @@ import { GlobalStyle } from "./styles/global"
 function App() {
   return (
     <>
-      <Routes />
-      <GlobalStyle />
+      <ContryProvider>
+        <Routes />
+        <GlobalStyle />
+      </ContryProvider>
     </>
   )
 }

@@ -15,6 +15,8 @@ export const Container = styled.header`
     background-color: white;
     a{
       font-weight: 500;
+      display: flex;
+      align-items: center;
     }
   }
 

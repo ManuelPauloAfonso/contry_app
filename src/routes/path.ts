@@ -2,6 +2,7 @@
 
 
 export const countrys = {
-    home: '/countrys/home',
-    datails: '/countrys/datails'
+  home: '/countrys/home',
+  datails: '/countrys/datails'
+
 }

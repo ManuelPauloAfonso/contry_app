@@ -1,12 +1,12 @@
-import { Children, createContext, useState } from "react";
+import { Children, createContext, useEffect, useState } from "react";
 import api from "../service/api";
 import { propsChildren, contryProps, contryResponse } from "../types";
 
 
 const contryContext = createContext<contryProps>({} as contryProps);
 
-const contryProvider = ({ children }: propsChildren) => {
-  const [contry, setcontry] = useState<contryResponse | null>(null);
+const ContryProvider = ({ children }: propsChildren) => {
+  const [contry, setcontry] = useState<contryResponse[]>([]);
 
   async function takContry() {
     try {
@@ -19,14 +19,15 @@ const contryProvider = ({ children }: propsChildren) => {
     }
   }
 
+
   return (
-    <contryContext.Provider value={{ contry, takContry }}>
+    <contryContext.Provider value={{ contry, takContry, setcontry }}>
       {children}
     </contryContext.Provider>
   )
 
 }
 
-export { contryProvider, contryContext }
+export { ContryProvider, contryContext }
 
 
